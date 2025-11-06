@@ -75,13 +75,47 @@ Compare the original modulating signal with the demodulated signal. PROCEDURE
 •	Verify the generated waveform using Tabulation and Model Waveform
 
 Program
+```
+ac = 18.6;
+am = 9.3;
+fc = 5900;
+fm = 590;
+fs = 59000;
+t = 0:1/fs:2/fm;
 
+// Message signal
+e1 = ac * sin(2*%pi*fm*t);
+subplot(4,1,1);
+plot(t, e1);
+title("Message Signal");
+xgrid();
+
+// Carrier signal
+e2 = ac * sin(2*%pi*fc*t);
+subplot(4,1,2);
+plot(t, e2);
+title("Carrier Signal");
+xgrid();
+
+// AM signal
+e3 = (ac + am*sin(2*%pi*fm*t)) .* sin(2*%pi*fc*t);
+subplot(4,1,3);
+plot(t, e3);
+title("AM Signal");
+xgrid();
+
+// Demodulated signal using envelope detection
+demodulated_signal = abs(hilbert(e3)) - ac;
+subplot(4,1,4);
+plot(t, demodulated_signal);
+title("Demodulated Signal");
+xgrid();
+```
 
 
 Output Waveform
 
-
-
+<img width="1102" height="744" alt="Screenshot 2025-11-06 083359" src="https://github.com/user-attachments/assets/277b1a46-564a-4093-9807-083896ccfad7" />
 
 
 TABULATION:
