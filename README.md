@@ -120,6 +120,9 @@ Output Waveform
 
 TABULATION:
 
+![am1](https://github.com/user-attachments/assets/80428ff0-a7d5-423a-b04f-ea83f5ad504d)
+![am2](https://github.com/user-attachments/assets/1c39c25b-fca2-492d-8a69-b125c3879210)
+
 
 
 Calculation
